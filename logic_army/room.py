@@ -1,4 +1,4 @@
-from soldier import Soldier
+from logic_army.soldier import Soldier
 
 
 class Room:

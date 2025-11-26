@@ -1,4 +1,4 @@
-from room import Room
+from logic_army.room import Room
 
 
 class House:
@@ -11,4 +11,5 @@ class House:
         if len(self.rooms_list) == self.num_rooms:
             raise
         self.rooms_list.append(room)
+
 
