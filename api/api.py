@@ -108,11 +108,15 @@ def get_waiting_soldier():
 @app.get("/search")
 def get_by_person_number(person_number):
     try:
+
         result = basis.get_info_by_person_num(person_number)
-        return {"status": result[0], "name house": result[1], "num room": result[2]}
+        if result != "Waiting":
+            return {"status": result[0], "name house": result[1], "num room": result[2]}
+        return result
     except:
         raise HTTPException(status_code=404, detail="person number not found")
 
 
 
 uvicorn.run(app)
+
